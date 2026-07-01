@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# deps / builds
+node_modules/
+dist/
+.vercel
+
+# env & secrets
+.env
+.env.*
+
+# OpenWolf — session/runtime data
+.wolf/hooks/
+.wolf/token-ledger.json
+.wolf/cron-state.json
+.wolf/designqc-captures/
+.wolf/suggestions.json
+
+# scratch
+tmp-*
+*.log

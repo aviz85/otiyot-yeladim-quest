@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אותיות וילדים: תעלומת הכתבה שנעלמה</title>
+<meta name="description" content="משחק הרפתקאות פיקסל-ארט בעברית לילדים, בסגנון משחקי ההרפתקה של שנות ה-90. עלילה בדיונית לחלוטין, נוצר כולו בבינה מלאכותית.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&family=Suez+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="screen" width="320" height="180"></canvas>
+  <div id="ui">
+    <div id="hoverlabel"></div>
+    <div id="toast"></div>
+    <div id="dialog"><span id="dlg-name"></span><span id="dlg-text"></span><span id="dlg-more">▼</span></div>
+    <div id="choices"></div>
+
+    <!-- disclaimer screen -->
+    <div class="screen" id="screen-disclaimer">
+      <div class="panel">
+        <h2>⚠️ רגע לפני שמתחילים!</h2>
+        <p><b>כל העלילה במשחק הזה דמיונית לחלוטין.</b><br>
+        אין שום קשר בין הדמויות, האירועים והמקומות במשחק לבין אנשים אמיתיים או למערכת האמיתית של עיתון ״אותיות וילדים״.</p>
+        <p>המשחק כולו — הסיפור, הציורים, המוזיקה והדיאלוגים — <b>נוצר על ידי בינה מלאכותית (מודל שפה)</b>, באהבה גדולה ובלי שום כוונה לפגוע באף אחד. הכל בצחוק וברוח טובה! 😊</p>
+        <button id="btn-disclaimer-ok">הבנתי — קדימה להרפתקה! ←</button>
+      </div>
+    </div>
+
+    <!-- title screen -->
+    <div class="screen" id="screen-title">
+      <div class="panel title-panel">
+        <div class="title-logo">אותיות וילדים</div>
+        <div class="title-sub">תעלומת הכתבה שנעלמה 🗞️</div>
+        <div class="title-tag">הרפתקת פיקסלים למשפחה, בהשראת משחקי ההרפתקה של שנות ה-90</div>
+        <button id="btn-new">🎮 משחק חדש</button>
+        <button id="btn-continue" style="display:none">⏩ המשך משחק</button>
+        <div class="title-credit">משחק בדיוני שנוצר כולו בבינה מלאכותית 🤖</div>
+      </div>
+    </div>
+
+    <!-- win screen -->
+    <div class="screen" id="screen-win">
+      <div class="panel">
+        <canvas id="win-canvas" width="320" height="180"></canvas>
+        <h2>🎉 הגיליון יצא לדפוס! 🎉</h2>
+        <p>בזכותך, קוראי ״אותיות וילדים״ יקבלו את העיתון בזמן —<br>וגם כתבה חדשה: <b>״נעם — גיבור המערכת!״</b></p>
+        <p class="small">תזכורת: כל הסיפור דמיוני לגמרי ונוצר בבינה מלאכותית 🤖💛</p>
+        <button id="btn-win-again">🏠 חזרה לתפריט</button>
+      </div>
+    </div>
+
+    <!-- save/load modal -->
+    <div class="screen" id="slots" style="display:none">
+      <div class="panel">
+        <h2 id="slots-title"></h2>
+        <div id="slots-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="hud">
+  <div id="hud-top">
+    <span id="roomname"></span>
+    <span id="hud-btns">
+      <button id="btn-hint" title="רמז">💡</button>
+      <button id="btn-look" title="מבט (או קליק ימני)">👁️</button>
+      <button id="btn-save" title="שמירה">💾</button>
+      <button id="btn-load" title="טעינה">📂</button>
+      <button id="btn-music" title="מוזיקה">🎵</button>
+      <button id="btn-menu" title="תפריט">🏠</button>
+    </span>
+  </div>
+  <div id="inv-items"></div>
+</div>
+
+<!-- core -->
+<script src="js/art.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/sprites_core.js"></script>
+<!-- sprites -->
+<script src="js/sprites/rivka.js"></script>
+<script src="js/sprites/gila.js"></script>
+<script src="js/sprites/dovi.js"></script>
+<script src="js/sprites/yossi.js"></script>
+<script src="js/sprites/hana.js"></script>
+<script src="js/sprites/shimon.js"></script>
+<script src="js/sprites/benny.js"></script>
+<script src="js/sprites/cat.js"></script>
+<script src="js/sprites/pigeon.js"></script>
+<script src="js/sprites/dog.js"></script>
+<!-- engine + game -->
+<script src="js/engine.js"></script>
+<script src="js/game.js"></script>
+<!-- music -->
+<script src="js/music/title.js"></script>
+<script src="js/music/office.js"></script>
+<script src="js/music/lobby.js"></script>
+<script src="js/music/newsroom.js"></script>
+<script src="js/music/kitchen.js"></script>
+<script src="js/music/design.js"></script>
+<script src="js/music/meeting.js"></script>
+<script src="js/music/archive.js"></script>
+<script src="js/music/roof.js"></script>
+<script src="js/music/street.js"></script>
+<script src="js/music/print.js"></script>
+<script src="js/music/finale.js"></script>
+<!-- room backgrounds -->
+<script src="js/rooms/win_bg.js"></script>
+<script src="js/rooms/office_bg.js"></script>
+<script src="js/rooms/lobby_bg.js"></script>
+<script src="js/rooms/newsroom_bg.js"></script>
+<script src="js/rooms/kitchen_bg.js"></script>
+<script src="js/rooms/design_bg.js"></script>
+<script src="js/rooms/meeting_bg.js"></script>
+<script src="js/rooms/archive_bg.js"></script>
+<script src="js/rooms/roof_bg.js"></script>
+<script src="js/rooms/street_bg.js"></script>
+<script src="js/rooms/print_bg.js"></script>
+<!-- rooms -->
+<script src="js/rooms/office.js"></script>
+<script src="js/rooms/lobby.js"></script>
+<script src="js/rooms/newsroom.js"></script>
+<script src="js/rooms/kitchen.js"></script>
+<script src="js/rooms/design.js"></script>
+<script src="js/rooms/meeting.js"></script>
+<script src="js/rooms/archive.js"></script>
+<script src="js/rooms/roof.js"></script>
+<script src="js/rooms/street.js"></script>
+<script src="js/rooms/print.js"></script>
+</body>
+</html>
