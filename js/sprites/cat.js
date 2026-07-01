@@ -8,6 +8,7 @@
 SPR.cat = function(ctx,t,o){
   const hb = Math.floor(t*2)%2;              // lazy idle head bob (1px)
   const sw = Math.round(Math.sin(t*2.2)*2);  // tail sway -2..2
+  const st = o.walk ? Math.floor(t*8)%2 : 0; // paw shuffle when walking
 
   // --- tail (behind body, rises from the rear, dark tabby tip) ---
   A.px(ctx,PAL.orange, 7,-4,2,4);
@@ -25,11 +26,13 @@ SPR.cat = function(ctx,t,o){
   // creamy chest/belly
   A.px(ctx,PAL.cream,-5,-6,3,5);
 
-  // --- front legs + paws (feet touch y=0) ---
-  A.px(ctx,PAL.orange,-5,-4,2,4);
-  A.px(ctx,PAL.orange,-2,-4,2,4);
-  A.px(ctx,PAL.cream,-5,-1,2,1);
-  A.px(ctx,PAL.cream,-2,-1,2,1);
+  // --- front legs + paws (feet touch y=0; alternate shuffle on walk) ---
+  const up1 = o.walk ? (st?1:0) : 0;         // raise one paw at a time
+  const up2 = o.walk ? (st?0:1) : 0;
+  A.px(ctx,PAL.orange,-5,-4,2,4-up1);
+  A.px(ctx,PAL.orange,-2,-4,2,4-up2);
+  A.px(ctx,PAL.cream,-5,-1-up1,2,1);
+  A.px(ctx,PAL.cream,-2,-1-up2,2,1);
 
   // --- head (facing left) ---
   A.disc(ctx,PAL.orange,-4,-11+hb,3);

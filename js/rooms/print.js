@@ -42,9 +42,7 @@ const PRINT_pressButton = async (color)=>{
       await G.say('noam','הגיליון החגיגי מודפס!! הספקנו לפני שש!!');
       await G.say('shimon','רוץ להגיד לרבקה!! בעצם אין צורך!! היא שומעת את המכונה עד הלובי!! כולם שומעים!! גם בירושלים שומעים!!');
       await G.say('noam','ריאיון עם ש. גיבורי, שלושה עמודים, אפס חתולים על הנייר. יום ״קורא צעיר במערכת״ הכי טוב אי פעם.');
-      G.f.won=true;
-      G.sfx('win');
-      G.win();
+      G.win(); /* sets f.won, plays win sfx, shows finale */
     }
   } else {
     G.sfx('buzz');
@@ -185,6 +183,7 @@ registerRoom({
             await G.say('shimon','רגע!! יש לך סוללות ביד!! תן לי, יש לי אצבעות של מכונאי!!');
             await G.say('noam','...אלה אצבעות מלאות דיו.');
             await G.say('shimon','אצבעות מקצועיות!! הופ!! פנימה!! ו... יש אור!!');
+            G.del('batteries');
             G.f.flash_ok=true;
             G.sfx('ding');
             await G.say('noam','הפנס עובד! עכשיו לארכיון — לחושך של המרתף!');
@@ -212,6 +211,7 @@ registerRoom({
           if(G.f.flash_ok){ await G.say('shimon','כבר יש סוללות בפנס!! מה אתה רוצה, פנס עם ארבע סוללות?! זה כבר פרוז׳קטור!!'); return; }
           if(!G.has('flashlight')){ await G.say('shimon','סוללות בלי פנס זה כמו דיו בלי נייר!! יפה, אבל חסר טעם!!'); return; }
           await G.say('shimon','סוללות!! תן לי, יש לי אצבעות של מכונאי!! הופ!! פנימה!! ו... יש אור!!');
+          G.del('batteries');
           G.f.flash_ok=true;
           G.sfx('ding');
           await G.say('noam','הפנס עובד! שמעון, אתה גדול!');

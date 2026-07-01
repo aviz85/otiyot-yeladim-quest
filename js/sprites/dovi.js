@@ -28,9 +28,10 @@ SPR.dovi = function(ctx,t,o){
   A.px(ctx,PAL.paper,3,-23+b,3,4);             // press badge on vest
   A.px(ctx,PAL.red,3,-23+b,3,1);
 
-  /* ---- back arm: hangs at the side ---- */
-  A.px(ctx,PAL.white,5,-25+b,2,8);             // sleeve
-  A.px(ctx,PAL.skin, 5,-17+b,2,3);             // hand
+  /* ---- back arm: hangs at the side, swings on walk ---- */
+  const sw = o.walk ? Math.floor(t*8)%2 : 0;
+  A.px(ctx,PAL.white,5,-25+b,2,8+(sw?2:0));    // sleeve
+  A.px(ctx,PAL.skin, 5,-17+b+(sw?2:0),2,3);    // hand
 
   /* ---- front arm holds the notepad out (facing left) ---- */
   A.px(ctx,PAL.white,-8,-25+b,2,5);            // sleeve

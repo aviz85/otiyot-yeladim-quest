@@ -1,4 +1,37 @@
 {
   "version": 1,
-  "bugs": []
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-07-01T22:08:29.800Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/sprites/dovi.js",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→4 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:08:29.800Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-07-01T22:10:49.435Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/sprites/cat.js",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→5 lines (5 removed) | Also: A.px(ctx,PAL.orange,-5,-4,2,4-(st?1:0));; A.px(ctx,PAL.orange,-2,-4,2,4-(st?0:1));",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-01T22:11:04.610Z"
+    }
+  ]
 }

@@ -182,7 +182,7 @@ async function handleClick(x,y,isLook){
 
 async function runAction(a){
   if(typeof a==='string') await G.say('noam',a);
-  else if(typeof a==='function') await a();
+  else if(typeof a==='function'){ const r=await a(); if(typeof r==='string') await G.say('noam',r); }
 }
 
 function randomNo(){
