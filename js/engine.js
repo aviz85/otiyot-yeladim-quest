@@ -233,6 +233,7 @@ G.choice = opts=>new Promise(res=>{
 });
 
 /* ---------------- inventory ---------------- */
+G.sfx = n=>sfx(n);
 G.has = id=>G.inv.includes(id);
 G.add = id=>{
   if(G.has(id)) return;
