@@ -146,3 +146,7 @@
 | 08:10 | Title tagline fix: למשפחה ← לכל המשפחה (reviewer finding) | index.html:37 | smoke test PASS | ~50 |
 | 08:30 | Game complete: 10 rooms, 11 sprites, 12 tracks, full playthrough smoke test, polish wave (65 fixes) | all | shipped | ~8.5M |
 | 08:32 | Deployed: GitHub public aviz85/otiyot-yeladim-quest + Vercel prod otiyot-yeladim-quest.vercel.app | - | live 200 | - |
+| 16:14 | Edited js/engine.js | added 1 condition(s) | ~56 |
+| 16:14 | Edited js/game.js | added error handling | ~212 |
+| 16:14 | Edited js/game.js | added 1 condition(s) | ~69 |
+| 16:14 | Edited test/smoke.js | added 3 condition(s) | ~134 |

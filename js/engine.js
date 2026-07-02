@@ -254,7 +254,10 @@ function renderInv(){
     try{ it.icon(ic); }catch(e){}
     d.appendChild(c);
     const s=document.createElement('span'); s.textContent=it.name; d.appendChild(s);
-    d.onclick=()=>{ G.selected=(G.selected===id?null:id); renderInv(); };
+    d.onclick=()=>{
+      if(G.selected && G.selected!==id && typeof tryCombine==='function' && tryCombine(G.selected,id)) return;
+      G.selected=(G.selected===id?null:id); renderInv();
+    };
     elInv.appendChild(d);
   }
 }

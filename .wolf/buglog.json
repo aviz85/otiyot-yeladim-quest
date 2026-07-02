@@ -622,6 +622,54 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-07-02T00:00:00Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-07-02T13:14:23.921Z",
+      "error_message": "Missing error handling in tryCombine",
+      "file": "js/game.js",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T13:14:23.921Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-07-02T13:14:27.391Z",
+      "error_message": "Wrong return value",
+      "file": "js/game.js",
+      "root_cause": "Was returning: 'הפנס בלי סוללות! בחדר הישיבות יש שלט של מקרן... ו",
+      "fix": "Now returns: 'יש לך פנס וגם סוללות! לחצו במלאי על הסוללות ואז ע",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T13:14:27.391Z"
+    },
+    {
+      "id": "bug-041",
+      "timestamp": "2026-07-02T13:14:43.494Z",
+      "error_message": "Missing await",
+      "file": "test/smoke.js",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T13:14:43.494Z"
     }
   ]
 }

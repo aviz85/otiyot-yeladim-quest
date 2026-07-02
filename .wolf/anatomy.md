@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-02T05:10:21.928Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-02T13:14:43.478Z
 > Files: 24 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -18,8 +18,8 @@
 
 ## js/
 
-- `engine.js` — W: registerRoom, engineInit, toGame + 15 more (~2837 tok)
-- `game.js` — CHARS: currentHint, bindUI, openSlots + 4 more (~2444 tok)
+- `engine.js` — W: registerRoom, engineInit, toGame + 15 more (~2872 tok)
+- `game.js` — CHARS: tryCombine, currentHint, bindUI + 5 more (~2681 tok)
 
 ## js/music/
 
@@ -49,4 +49,4 @@
 
 ## test/
 
-- `smoke.js` — fs: el, ctxStub (~1888 tok)
+- `smoke.js` — fs: el, ctxStub (~2016 tok)

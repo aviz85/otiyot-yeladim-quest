@@ -32,6 +32,27 @@ const ITEMS = {
   cookie:{name:'עוגייה', icon:c=>{A.disc(c,PAL.brown4,8,8,6);A.px(c,PAL.brown1,5,6,2,2);A.px(c,PAL.brown1,9,9,2,2);A.px(c,PAL.brown1,7,11,2,1);A.px(c,PAL.brown1,10,5,1,2);}},
 };
 
+/* ---------------- inventory combos (item on item) ---------------- */
+const COMBOS = {
+  'batteries+flashlight': async()=>{
+    G.del('batteries');
+    G.f.flash_ok=true;
+    sfx('ding');
+    await G.say('noam','קליק! קליק! הסוללות נכנסו לפנס ו... יש אור!');
+    await G.say('noam','עכשיו החושך בארכיון בבעיה רצינית.');
+  },
+  'cookie+tuna': async()=>{
+    await G.say('noam','עוגייה עם טונה? אפילו מרדכי החתול היה מגיש על זה תלונה למערכת.');
+  },
+};
+function tryCombine(a,b){
+  const fn=COMBOS[a+'+'+b]||COMBOS[b+'+'+a];
+  if(!fn) return false;
+  G.selected=null; renderInv();
+  (async()=>{ G.busy=true; try{ await fn(); }catch(e){console.error(e);} G.busy=false; })();
+  return true;
+}
+
 /* ---------------- hint system ---------------- */
 function currentHint(){
   const f=G.f;
@@ -58,7 +79,10 @@ function currentHint(){
   }
   if(missing.includes('page3')){
     if(!G.has('flashlight')) return 'בארכיון במרתף חשוך לגמרי. לשמעון בבית הדפוס יש פנס — שווה לבקש ממנו!';
-    if(!f.flash_ok) return 'הפנס בלי סוללות! בחדר הישיבות יש שלט של מקרן... ומה יש בתוך שלט? בדיוק.';
+    if(!f.flash_ok){
+      if(G.has('batteries')) return 'יש לך פנס וגם סוללות! לחצו במלאי על הסוללות ואז על הפנס — או תנו לשמעון המדפיס להרכיב.';
+      return 'הפנס בלי סוללות! בחדר הישיבות יש שלט של מקרן... ומה יש בתוך שלט? בדיוק.';
+    }
     if(!f.archive_lit) return 'יש לך פנס עובד! השתמשו בו בתוך הארכיון החשוך.';
     if(!f.hana_quiz) return 'חנה מהארכיון יודעת בדיוק איפה הדף — אבל היא אוהבת חידות. דברו איתה!';
     return 'חנה אמרה: הקלסר שהמספר שלו הוא כמספר האותיות באלף-בית! ספרו טוב ולחצו על הקלסר הנכון.';

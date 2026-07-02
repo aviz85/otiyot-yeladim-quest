@@ -126,6 +126,13 @@ const driver = `
   await useH(/ירוק/); await useH(/צהוב/); await useH(/אדום/);
   expect(G.f.won===true,'WON');
 
+  // inventory combine: batteries + flashlight must set flash_ok
+  G.f.flash_ok=false; if(!G.has('batteries')) G.inv.push('batteries'); if(!G.has('flashlight')) G.inv.push('flashlight');
+  if(!tryCombine('batteries','flashlight')) FAIL.push('combine batteries+flashlight not registered');
+  await new Promise(r=>setTimeout(r,20));
+  expect(G.f.flash_ok===true,'combine sets flash_ok');
+  expect(!G.has('batteries'),'combine consumes batteries');
+
   // music integrity
   for(const [id,tr] of Object.entries(MUSIC.tracks)){
     const totals=tr.ch.map(c=>parseSeq(c.seq).total);
