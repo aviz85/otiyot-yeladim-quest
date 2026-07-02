@@ -62,9 +62,6 @@ SPR.dovi = function(ctx,t,o){
   A.px(ctx,PAL.brown1, 0,-34+b,1,1);
   SB.mouth(ctx,t,o,-2,-29+b);
 
-  /* ---- kippah peeking at the back, under the hat ---- */
-  A.px(ctx,PAL.navy,2,-36+b,3,1);
-
   /* ---- white press hat with a card in the band ---- */
   A.px(ctx,PAL.white,-7,-37+b,13,2);           // brim
   A.px(ctx,PAL.cream,-7,-36+b,13,1);           // brim underside
@@ -73,4 +70,7 @@ SPR.dovi = function(ctx,t,o){
   A.px(ctx,PAL.ink,-4,-38+b,8,1);              // hat band
   A.px(ctx,PAL.paper,-4,-41+b,3,4);            // press card tucked in the band
   A.px(ctx,PAL.red,-4,-40+b,3,1);              // red stripe on the card
+
+  /* ---- kippah peeking below the brim at the back of the head ---- */
+  A.px(ctx,PAL.navy,2,-35+b,3,1);
 };

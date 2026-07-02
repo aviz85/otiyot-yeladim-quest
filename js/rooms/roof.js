@@ -4,6 +4,8 @@
 */
 'use strict';
 
+let roofIntro=false;
+
 registerRoom({
   id:'roof',
   name:'הגג',
@@ -14,7 +16,8 @@ registerRoom({
   npcs:()=>G.f.pigeon_gone ? [] : [{s:'pigeon', x:228, y:96, flip:false}],
 
   enter: async(from)=>{
-    if(!G.f.knows_pigeon){
+    if(!roofIntro && !G.f.got2){
+      roofIntro=true;
       await G.say('noam','וואו! רואים מפה את כל השכונה! ואת הכביסה של כל השכונה!');
       await G.say('pigeon','קורר-קו.');
       await G.say('noam','ויש פה יונה. יונה עם קן. ובקן... רגע. זה דף?!');

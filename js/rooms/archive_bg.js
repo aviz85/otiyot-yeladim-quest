@@ -45,8 +45,8 @@ BG.archive = function(ctx,t){
 
     // glowing eyes gag — something lives between the binders (animation 2)
     if(Math.floor(t*0.9)%5!==0){                              // it blinks!
-      A.px(ctx,PAL.lime,243,97,2,2); A.px(ctx,PAL.lime,250,97,2,2);
-      A.px(ctx,PAL.greenD,244,98,1,1); A.px(ctx,PAL.greenD,251,98,1,1);
+      A.px(ctx,PAL.lime,216,72,2,2); A.px(ctx,PAL.lime,223,72,2,2);
+      A.px(ctx,PAL.greenD,217,73,1,1); A.px(ctx,PAL.greenD,224,73,1,1);
     }
     if(Math.floor(t*1.7)%7!==0){                              // tiny mouse eyes
       A.px(ctx,PAL.yellow,148,136,1,1); A.px(ctx,PAL.yellow,151,136,1,1);

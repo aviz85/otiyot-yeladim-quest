@@ -32,6 +32,140 @@
       "related_bugs": [],
       "occurrences": 2,
       "last_seen": "2026-07-01T22:11:04.610Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-07-01T22:24:17.853Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/rooms/meeting_bg.js",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→11 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:17.853Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-07-01T22:24:22.970Z",
+      "error_message": "QA: dusty box hotspot (archive.js) at x74-98 y124-146 mismatched drawn box at x228-262 y150-172 — clicking visible box did nothing",
+      "file": "js/rooms/archive.js",
+      "root_cause": "Hotspot rect for ארגז מאובק did not match the bg drawing rect defined in archive_bg.js layout contract",
+      "fix": "Changed hotspot to x:228,y:150,w:34,h:22,wx:224 to match the drawn box on the floor",
+      "tags": [
+        "hotspot-mismatch",
+        "archive",
+        "qa"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:22.970Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-07-01T22:24:22.970Z",
+      "error_message": "QA: glowing eyes drawn at (243,97) but עיניים זוהרות hotspot is x208-234 y66-84 — visible eyes fell through to generic darkness line",
+      "file": "js/rooms/archive_bg.js",
+      "root_cause": "Dark-state eye pixels drawn outside the hotspot rect defined in archive.js",
+      "fix": "Moved eyes to (216,72)/(223,72) with greenD pupils at (217,73)/(224,73), inside the hotspot rect",
+      "tags": [
+        "hotspot-mismatch",
+        "archive",
+        "dark-state",
+        "qa"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:22.970Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-07-01T22:24:55.689Z",
+      "error_message": "QA: clicking visible cactus does nothing; cactus hotspot (x246-260 y132-150) hit the fallen chair instead",
+      "file": "js/rooms/meeting_bg.js",
+      "root_cause": "bg drew cactus at x293-309 y122-154 while meeting.js hotspot is x246-260 y132-150",
+      "fix": "redrew cactus inside x246-260 y132-150 (pot base y148-150) + updated header layout-contract comment",
+      "tags": [
+        "qa",
+        "hotspot-mismatch",
+        "meeting",
+        "bg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:55.689Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-07-01T22:24:55.689Z",
+      "error_message": "QA: fallen chair (x240-264 y146-157) sat inside the cactus hotspot rect",
+      "file": "js/rooms/meeting_bg.js",
+      "root_cause": "decorative chair overlapped hotspot x246-260 y132-150, so the click target read as a chair",
+      "fix": "moved fallen chair to x272-300 y146-157 and moved its baseboard shadow under it",
+      "tags": [
+        "qa",
+        "overlap",
+        "meeting",
+        "bg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:55.689Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-07-01T22:24:55.689Z",
+      "error_message": "QA: remote drawn forever — screen contradicts מקום השלט dust-outline narration after batteries taken",
+      "file": "js/rooms/meeting_bg.js",
+      "root_cause": "remote pixels drawn unconditionally, ignoring G.has(batteries)/G.f.flash_ok state",
+      "fix": "wrapped remote draw in typeof G guard matching meeting.js visible(); else-branch draws PAL.gray4 dust outline (roof_bg.js got2 pattern)",
+      "tags": [
+        "qa",
+        "state-dependent-bg",
+        "meeting",
+        "bg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-01T22:24:55.689Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-07-02T00:00:00.000Z",
+      "error_message": "QA: 'קלסר 22' hotspot unclickable — nested inside 'מדפי הקלסרים' rect but placed earlier in array; engine hotspotsAt returns LAST matching hotspot, so shelves always won. page3 unobtainable, game uncompletable.",
+      "file": "js/rooms/archive.js",
+      "root_cause": "Hotspot array order: smaller nested rect (binder 22) came before the larger containing rect (shelves); engine.js hotspotsAt iterates from end of array.",
+      "fix": "Moved the 'קלסר 22' hotspot object to AFTER 'מדפי הקלסרים' in the hotspots array (same rule as the dark layer), added explanatory Hebrew comment.",
+      "tags": [
+        "hotspot",
+        "z-order",
+        "hit-testing",
+        "archive",
+        "game-breaking"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T00:00:00.000Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-07-02T04:58:37.856Z",
+      "error_message": "Incorrect value in code",
+      "file": "test/smoke.js",
+      "root_cause": "Had 'seeds bought'",
+      "fix": "Changed to 'coin'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-02T04:58:39.390Z"
     }
   ]
 }

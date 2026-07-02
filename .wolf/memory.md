@@ -39,3 +39,26 @@
 | 01:25 | verified finale music track (32 beats/ch, 132bpm C major march, node --check pass) | js/music/finale.js | ok | ~3k |
 | 01:15 | Edited js/music/title.js | 3→5 lines | ~71 |
 | 01:16 | Edited js/engine.js | added 1 condition(s) | ~52 |
+| 01:23 | Edited js/rooms/roof.js | 3→5 lines | ~15 |
+| 01:23 | Edited js/rooms/archive.js | inline fix | ~16 |
+| 01:23 | Edited js/rooms/meeting_bg.js | inline fix | ~24 |
+| 01:23 | Edited js/rooms/archive_bg.js | 2→2 lines | ~40 |
+| 01:23 | Edited js/rooms/meeting_bg.js | 7→8 lines | ~190 |
+| 01:23 | Edited js/rooms/roof.js | modified if() | ~91 |
+| 01:23 | Edited js/sprites/dovi.js | 12→12 lines | ~178 |
+| 01:23 | Edited js/rooms/meeting_bg.js | 3→3 lines | ~51 |
+| 01:24 | Edited js/rooms/meeting_bg.js | 3→3 lines | ~50 |
+| 01:24 | Fixed dovi kippah hidden under hat brim: moved kippah draw after hat block, row -36→-35 so it peeks below brim | js/sprites/dovi.js | node --check OK | ~1500 |
+| 01:24 | roof.js: fixed dead-code intro — gated on module-local roofIntro (+!G.f.got2) instead of knows_pigeon which is always pre-set | js/rooms/roof.js | node --check OK | ~200 |
+| 01:24 | Edited js/rooms/meeting_bg.js | added 1 condition(s) | ~185 |
+| 01:24 | QA fix: aligned dusty-box hotspot (archive.js) + moved dark-state glowing eyes into hotspot rect (archive_bg.js) | js/rooms/archive.js, js/rooms/archive_bg.js | node --check OK | ~4k |
+| 01:24 | Edited js/rooms/archive.js | modified if() | ~456 |
+| 01:24 | QA fixes meeting_bg: cactus redrawn into hotspot x246-260 y132-150, fallen chair moved to x272-300, remote now state-gated with dust-outline else | js/rooms/meeting_bg.js | node --check OK | ~6k |
+| 01:25 | QA fix: reordered hotspots — קלסר 22 moved after מדפי הקלסרים so nested rect wins hit-test (engine returns last match); page3 obtainable again | js/rooms/archive.js | node --check OK | ~3k |
+| 01:26 | Edited js/rooms/print.js | inline fix | ~10 |
+| 01:26 | Edited js/rooms/print.js | inline fix | ~16 |
+| 07:56 | Created test/smoke.js | — | ~1869 |
+| 07:57 | Edited test/smoke.js | modified addEventListener() | ~35 |
+| 07:57 | Edited test/smoke.js | 2→3 lines | ~29 |
+| 07:58 | Edited test/smoke.js | added 1 condition(s) | ~45 |
+| 07:58 | Edited test/smoke.js | modified if() | ~41 |

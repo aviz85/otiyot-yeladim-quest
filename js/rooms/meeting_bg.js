@@ -4,7 +4,7 @@
    whiteboard x90-170 y30-80 (cat doodle + ״רעיונות לגיליון״)
    projector on table x180-206 y100-110 · REMOTE x210-226 y104-112
    projected slide on wall x240-300 y40-100 (a pixel cat!)
-   water pitcher x100-116 y100-110 · cactus (right corner)
+   water pitcher x100-116 y100-110 · cactus x246-260 y132-150 (pot base y148-150)
 */
 'use strict';
 if(typeof BG==='undefined') var BG={};
@@ -144,35 +144,42 @@ BG.meeting = function(ctx,t){
   A.px(ctx,PAL.gray1,192,114,60,1);                      // …along the table
   A.px(ctx,PAL.gray1,252,114,1,26);                      // …to the floor
 
-  // ---- the REMOTE (x210-226 y104-112) — battery treasure ----
-  A.box(ctx,PAL.ink,PAL.black,210,104,16,8);
-  A.px(ctx,PAL.red,212,106,2,2); A.px(ctx,PAL.gray3,216,106,2,2);
-  A.px(ctx,PAL.gray3,220,106,2,2); A.px(ctx,PAL.green,223,106,2,2);
-  A.px(ctx,PAL.gray4,212,109,10,1);                      // battery lid seam
+  // ---- the REMOTE (x210-226 y104-112) — battery treasure, until it's pocketed ----
+  if(typeof G==='undefined'||!G.f||(!G.has('batteries')&&!G.f.flash_ok)){
+    A.box(ctx,PAL.ink,PAL.black,210,104,16,8);
+    A.px(ctx,PAL.red,212,106,2,2); A.px(ctx,PAL.gray3,216,106,2,2);
+    A.px(ctx,PAL.gray3,220,106,2,2); A.px(ctx,PAL.green,223,106,2,2);
+    A.px(ctx,PAL.gray4,212,109,10,1);                    // battery lid seam
+  } else {
+    // רק צורת שלט באבק — dust outline where the remote used to rest
+    A.px(ctx,PAL.gray4,210,104,16,1); A.px(ctx,PAL.gray4,210,111,16,1);
+    A.px(ctx,PAL.gray4,210,105,1,6); A.px(ctx,PAL.gray4,225,105,1,6);
+  }
 
   // chairs IN FRONT of the table (seen from behind)
   A.px(ctx,PAL.brown2,96,132,20,6);                      // seat
   A.px(ctx,PAL.brown1,98,138,3,14); A.px(ctx,PAL.brown1,111,138,3,14);
   A.px(ctx,PAL.brown2,188,134,20,6);
   A.px(ctx,PAL.brown1,190,140,3,12); A.px(ctx,PAL.brown1,203,140,3,12);
-  // one chair fell over — dramatic exit from the last meeting
-  A.px(ctx,PAL.brown2,240,152,24,5);
-  A.px(ctx,PAL.brown1,262,146,4,11);
+  // one chair fell over — dramatic exit from the last meeting (x272-300, clear of the cactus hotspot)
+  A.px(ctx,PAL.brown2,272,152,24,5);
+  A.px(ctx,PAL.brown1,294,146,4,11);
 
   // wastebasket + rejected-idea paper balls
   A.px(ctx,PAL.gray2,44,132,14,14); A.px(ctx,PAL.gray1,44,132,14,2);
   A.px(ctx,PAL.paper,46,130,5,4); A.px(ctx,PAL.paperD,52,131,4,3); // overflowing
   A.disc(ctx,PAL.paper,38,148,2); A.disc(ctx,PAL.paperD,62,152,2); // missed shots
 
-  // ---- the cactus (nobody remembers who brought it) ----
-  A.px(ctx,PAL.orangeD,294,144,14,10); A.px(ctx,PAL.brown1,293,143,16,2); // pot
-  A.px(ctx,PAL.green,299,124,5,20);                      // trunk
-  A.px(ctx,PAL.green,294,128,5,4); A.px(ctx,PAL.green,294,124,3,6);  // left arm
-  A.px(ctx,PAL.green,304,132,5,4); A.px(ctx,PAL.green,306,126,3,8);  // right arm
-  A.px(ctx,PAL.lime,300,124,1,2); A.px(ctx,PAL.lime,295,125,1,2);    // spines
-  A.px(ctx,PAL.lime,307,127,1,2); A.px(ctx,PAL.pink,301,122,2,2);    // brave flower
+  // ---- the cactus (nobody remembers who brought it) — hotspot x246-260 y132-150 ----
+  A.px(ctx,PAL.brown1,246,150,14,2);                     // floor shadow under the pot
+  A.px(ctx,PAL.orangeD,248,144,10,6); A.px(ctx,PAL.brown1,247,143,12,2); // pot (base y148-150)
+  A.px(ctx,PAL.green,251,132,3,12);                      // trunk
+  A.px(ctx,PAL.green,247,137,4,3); A.px(ctx,PAL.green,247,133,2,5);  // left arm
+  A.px(ctx,PAL.green,254,139,4,3); A.px(ctx,PAL.green,256,134,2,6);  // right arm
+  A.px(ctx,PAL.lime,252,133,1,2); A.px(ctx,PAL.lime,248,134,1,2);    // spines
+  A.px(ctx,PAL.lime,257,135,1,2); A.px(ctx,PAL.pink,251,132,2,1);    // brave flower
 
   // baseboard shadows under the big stuff (grounding)
   A.px(ctx,PAL.brown1,72,150,156,2);
-  A.px(ctx,PAL.brown1,292,154,18,2);
+  A.px(ctx,PAL.brown1,272,157,26,2);                     // under the fallen chair
 };

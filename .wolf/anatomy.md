@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-01T22:16:23.985Z
-> Files: 11 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-02T04:58:39.340Z
+> Files: 16 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -26,11 +26,19 @@
 
 ## js/rooms/
 
+- `archive_bg.js` — Declares lit (~2349 tok)
+- `archive.js` — Declares f (~2332 tok)
+- `meeting_bg.js` — Declares tick (~2839 tok)
 - `print.js` — Declares PRINT_pressButton (~3469 tok)
+- `roof.js` — c: feedNachum (~2338 tok)
 - `street.js` — buySeeds: bennyJoke, bennyTalk (~3205 tok)
 
 ## js/sprites/
 
 - `cat.js` — Declares hb (~673 tok)
-- `dovi.js` — Declares b (~1008 tok)
+- `dovi.js` — Declares b (~1011 tok)
 - `gila.js` — SPR.gila sprite: receptionist, pink top, headset w/ blinking mic, ponytail, lavender modest skirt; faces left, feet at (0,0), ~38px (~900 tok)
+
+## test/
+
+- `smoke.js` — fs: el, ctxStub (~1888 tok)
