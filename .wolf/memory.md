@@ -62,3 +62,85 @@
 | 07:57 | Edited test/smoke.js | 2→3 lines | ~29 |
 | 07:58 | Edited test/smoke.js | added 1 condition(s) | ~45 |
 | 07:58 | Edited test/smoke.js | modified if() | ~41 |
+| 08:02 | QA Hebrew/audience review of lobby.js (subagent) — 3 nice-level issues (diet joke, deadline gag clarity, high-register לפיו), no must-fix | js/rooms/lobby.js | reported via StructuredOutput | ~3k |
+| 08:02 | QA Hebrew review of newsroom.js (language, kid-fit, humor, arrows) | js/rooms/newsroom.js | 1 nice issue: filename gender agreement line 124 | ~4k |
+| 08:06 | QA Hebrew review of js/game.js (subagent) — found gender-agreement "ריק"→"ריקה", "ידע"→"יידע", 2 phrasing nits | js/game.js | reported via StructuredOutput | ~2k |
+| 08:08 | Edited js/rooms/kitchen.js | "הקשת חזרה ללובי. מישהו תל" → "הקשת חזרה ללובי. מישהו תל" | ~32 |
+| 08:08 | Edited js/rooms/office.js | inline fix | ~30 |
+| 08:08 | Edited js/rooms/archive.js | inline fix | ~25 |
+| 08:08 | Edited js/rooms/archive.js | inline fix | ~22 |
+| 08:08 | Edited js/rooms/office.js | inline fix | ~42 |
+| 08:08 | Edited js/rooms/office.js | "אין כאן את מה שאני מחפש —" → "מה שאני מחפש לא נמצא כאן " | ~23 |
+| 08:08 | Edited js/rooms/office.js | "״כתוב! ותכתוב!״ — הפוסטר " → "״כתוב עכשיו, תתקן אחר כך!" | ~30 |
+| 08:08 | Edited js/rooms/newsroom.js | inline fix | ~7 |
+| 08:08 | Edited js/rooms/lobby.js | inline fix | ~40 |
+| 08:08 | Edited js/rooms/archive.js | added 1 condition(s) | ~74 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~8 |
+| 08:08 | Edited js/rooms/newsroom.js | added 1 condition(s) | ~67 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~20 |
+| 08:08 | Edited js/rooms/lobby.js | inline fix | ~41 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~11 |
+| 08:08 | Edited js/rooms/newsroom.js | added 1 condition(s) | ~49 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~9 |
+| 08:08 | Edited js/rooms/newsroom.js | added 1 condition(s) | ~51 |
+| 08:08 | Edited js/rooms/roof.js | "דוד שמש. מחמם מים בעזרת ש" → "דוד שמש. מחמם מים בעזרת ה" | ~22 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~25 |
+| 08:08 | Edited js/rooms/lobby.js | "שלט ״עורכת ראשית״. מבפנים" → "שלט ״עורכת ראשית״. מבפנים" | ~32 |
+| 08:08 | Edited js/rooms/roof.js | inline fix | ~15 |
+| 08:08 | Edited js/rooms/lobby.js | added 1 condition(s) | ~62 |
+| 08:09 | Edited js/rooms/office.js | expanded (+6 lines) | ~164 |
+| 08:09 | Edited js/rooms/street.js | inline fix | ~20 |
+| 08:09 | Edited js/rooms/street.js | inline fix | ~3 |
+| 08:09 | Edited js/rooms/street.js | inline fix | ~4 |
+| 08:09 | Edited js/rooms/archive.js | added nullish coalescing | ~253 |
+| 08:09 | Edited js/rooms/street.js | "לחצתי עליו ידידותית. הוא " → "טפחתי עליו טפיחה ידידותית" | ~26 |
+| 08:09 | Edited js/rooms/roof.js | removed 5 lines | ~14 |
+| 08:09 | Edited js/rooms/street.js | inline fix | ~26 |
+| 2026-07-02 | Applied 3 reviewer polish fixes to newsroom.js (filename gender agreement, window post-got2 branch, dovi tuna-in-inventory branches) | js/rooms/newsroom.js | node --check + smoke PASS | ~3k |
+| 08:09 | Edited js/rooms/roof.js | 1→2 lines | ~47 |
+| 08:09 | Edited js/rooms/design.js | 3→5 lines | ~15 |
+| 08:09 | Edited js/rooms/design.js | inline fix | ~33 |
+| 08:09 | Edited js/rooms/roof.js | added 1 condition(s) | ~120 |
+| 08:09 | Edited js/rooms/design.js | inline fix | ~29 |
+| 08:09 | Edited js/rooms/archive.js | removed 22 lines | ~30 |
+| 08:09 | Applied reviewer fixes to office.js: fixed garbled העמדתי→חנה מהארכיון hint, poster slogan, shelf phrasing, intro gender-clash, added items handler (pages/article on Rivka) | js/rooms/office.js | node --check + smoke.js PASS | ~3k |
+| 08:09 | Edited js/rooms/design.js | inline fix | ~32 |
+| 08:09 | Edited js/rooms/lobby.js | added 1 condition(s) | ~304 |
+| 08:09 | Edited js/rooms/design.js | added 1 condition(s) | ~159 |
+| 08:09 | Edited js/rooms/street.js | expanded (+6 lines) | ~186 |
+| 08:09 | Edited js/rooms/design.js | inline fix | ~31 |
+| 08:09 | Edited js/rooms/archive.js | 4→8 lines | ~82 |
+| 08:09 | Edited js/rooms/street.js | 7→10 lines | ~123 |
+| 08:09 | Applied 8 reviewer fixes to roof.js (Hebrew grammar/humor polish, intro-replay guard after reload, shared tunaOnNachum for pigeon+nest overlap) | js/rooms/roof.js | smoke PASS | ~6k |
+| 08:09 | Edited js/rooms/meeting.js | "שמונה כיסאות. אחד מהם מסת" → "שמונה כיסאות. אחד מהם מסת" | ~30 |
+| 08:09 | Edited js/rooms/street.js | added 1 condition(s) | ~78 |
+| 08:09 | Edited js/rooms/meeting.js | inline fix | ~25 |
+| 08:09 | Edited js/rooms/design.js | inline fix | ~15 |
+| 08:09 | Edited js/rooms/meeting.js | expanded (+6 lines) | ~85 |
+| 08:09 | Edited js/rooms/lobby.js | removed 21 lines | ~19 |
+| 08:09 | Edited js/rooms/meeting.js | 4→4 lines | ~76 |
+| 08:09 | Edited js/rooms/print.js | inline fix | ~2 |
+| 08:09 | Applied 4 reviewer fixes to archive.js: קוח cough fix, עזבי phrasing, hana post-article stale-dialogue branch, flashlight/batteries handlers shared with glowing-eyes hotspot (extracted archiveLightUp/archiveBatteriesInDark) | js/rooms/archive.js | node --check + smoke.js PASS | ~6k |
+| 08:09 | Edited js/rooms/meeting.js | expanded (+6 lines) | ~103 |
+| 08:09 | Edited js/rooms/design.js | expanded (+8 lines) | ~198 |
+| 08:09 | Edited js/rooms/meeting.js | inline fix | ~22 |
+| 08:09 | Edited js/rooms/print.js | inline fix | ~40 |
+| 08:09 | Edited js/rooms/meeting.js | inline fix | ~22 |
+| 08:09 | Edited js/rooms/design.js | "ארבע כוסות קפה ריקות, אחת" → "ארבע כוסות קפה כמעט ריקות" | ~35 |
+| 08:09 | Edited js/rooms/print.js | inline fix | ~37 |
+| 08:09 | Edited js/rooms/design.js | modified pageOnTable() | ~106 |
+| 08:09 | Edited js/rooms/print.js | 4→7 lines | ~167 |
+| 2026-07-02 | Applied 8 reviewer fixes to street room: niqqud (כַּתָּב, גַּל-יון), Hebrew phrasing (טפחתי, מפשפשים), header arrow direction, tuna+seeds item handlers on both Benny hotspots, article-aware dog-newspaper line | js/rooms/street.js | smoke PASS | ~1500 |
+| 08:10 | Applied 8 reviewer polish fixes to meeting.js (מקרין typo, sticker !!! count, מחפה על, שלט עם סוללות pickup, calque fixes, batteries callback handlers) | js/rooms/meeting.js | node --check + smoke PASS | ~3k |
+| 08:10 | Edited js/game.js | inline fix | ~8 |
+| 08:10 | Edited js/game.js | "יש לך את כל שלושת העמודים" → "יש לך את כל שלושת העמודים" | ~34 |
+| 08:10 | Applied 4 reviewer polish fixes to print.js: spelled-out page count in Shimon dialogue, corrected battery hint (projector remote), removed stray niqqud from אפצ׳י, added page1-3 item handlers on shimon hotspot | js/rooms/print.js | node --check + smoke.js PASS | ~4k |
+| 08:10 | Edited index.html | inline fix | ~16 |
+| 08:10 | Edited js/game.js | "חנה אמרה: הקלסר עם המספר " → "חנה אמרה: הקלסר שהמספר של" | ~29 |
+| 2026-07-02 | Applied 5 reviewer fixes to lobby: removed diet joke (Gila cookie line), concretized Rivka clock joke, simplified editor-door look line, reordered hotspots so Gila wins overlap vs reception desk (engine reverse-iteration priority), added G.f.won guard to Gila use handler | js/rooms/lobby.js | node --check + smoke PASS | ~1200 |
+| 08:10 | Edited js/game.js | "הפנס בלי סוללות! רמז: בחד" → "הפנס בלי סוללות! בחדר היש" | ~29 |
+| 08:10 | Edited js/game.js | added 1 condition(s) | ~40 |
+| 08:10 | Edited js/game.js | added 1 condition(s) | ~44 |
+| 2026-07-02 | Applied 11 reviewer fixes to design room: Hebrew fixes (calque "זה איך ש", "שני שלישים", "נשאר לי חור", נחום היונה, "מלא ומאושר" instead of ambiguous שבע, "רגע היסטורי" instead of קודש, "כמעט ריקות" cups, "המקום של החור"), metYossi closure gating intro replay, light-table h:70→62 (Yossi head overlap), added page/article item handlers on light-table | js/rooms/design.js | node --check + smoke PASS | ~1400 |
+| 08:10 | Applied 6 reviewer fixes to hints/UI Hebrew (ריקה, יידע, hint rewrites, cat_fed/pigeon_gone hint states) | js/game.js | node --check + smoke PASS | ~200 |
+| 08:10 | Title tagline fix: למשפחה ← לכל המשפחה (reviewer finding) | index.html:37 | smoke test PASS | ~50 |

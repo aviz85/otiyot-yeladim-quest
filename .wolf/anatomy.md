@@ -1,11 +1,12 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-07-02T04:58:39.340Z
-> Files: 16 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-07-02T05:10:21.928Z
+> Files: 24 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `CLAUDE.md` — OpenWolf (~57 tok)
+- `index.html` — אותיות וילדים: תעלומת הכתבה שנעלמה (~1450 tok)
 
 ## .claude/
 
@@ -18,6 +19,7 @@
 ## js/
 
 - `engine.js` — W: registerRoom, engineInit, toGame + 15 more (~2837 tok)
+- `game.js` — CHARS: currentHint, bindUI, openSlots + 4 more (~2444 tok)
 
 ## js/music/
 
@@ -27,11 +29,17 @@
 ## js/rooms/
 
 - `archive_bg.js` — Declares lit (~2349 tok)
-- `archive.js` — Declares f (~2332 tok)
+- `archive.js` — archiveLightUp: archiveBatteriesInDark (~2434 tok)
+- `design.js` — Declares inv (~3104 tok)
+- `kitchen.js` — Declares lines (~1670 tok)
+- `lobby.js` — Declares f (~2176 tok)
 - `meeting_bg.js` — Declares tick (~2839 tok)
-- `print.js` — Declares PRINT_pressButton (~3469 tok)
-- `roof.js` — c: feedNachum (~2338 tok)
-- `street.js` — buySeeds: bennyJoke, bennyTalk (~3205 tok)
+- `meeting.js` — Declares c (~1599 tok)
+- `newsroom.js` — a: feedMordechai (~2662 tok)
+- `office.js` — Declares c (~1380 tok)
+- `print.js` — Declares PRINT_pressButton (~3584 tok)
+- `roof.js` — c: tunaOnNachum, feedNachum (~2411 tok)
+- `street.js` — buySeeds: bennyJoke, bennyTalk (~3374 tok)
 
 ## js/sprites/
 

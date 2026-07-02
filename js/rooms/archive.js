@@ -2,6 +2,29 @@
    ואור (חנה + קלסרים + חידת ה-22). Layout contract per DESIGN.md ### archive. */
 'use strict';
 
+// הדלקת האור בארכיון — משותף לחוטספוט ״חושך״ ולעיניים הזוהרות (הרקט שלהן בתוך רקט החושך)
+async function archiveLightUp(){
+  if(!G.f.flash_ok){
+    G.sfx('no');
+    await G.say('noam','קליק. קליק-קליק. קליק?? הפנס לא נדלק... צריך סוללות.');
+    await G.say('noam','פנס בלי סוללות זה בעצם סתם שפופרת עם חלומות.');
+  } else {
+    G.f.archive_lit=true;
+    G.sfx('ding');
+    await G.say('noam','ויהי אור!');
+    await G.say('hana','אה! אור! סוף סוף רואים משהו!');
+    await G.say('noam','אווווה!! מ... מי את?!');
+    await G.say('hana','חנה, הארכיונאית. שלושה ימים אני יושבת פה בחושך. חשבתי שסתם ירד ערב מוקדם.');
+    autosave();
+  }
+}
+
+async function archiveBatteriesInDark(){
+  G.sfx('no');
+  await G.say('noam','אני מנופף בסוללות באוויר... כלום. סוללות בלי פנס זה כמו עיתון בלי אותיות.');
+  await G.say('noam','אולי להכניס אותן למשהו? למשל... לפנס?');
+}
+
 registerRoom({
   id:'archive',
   name:'הארכיון',
@@ -20,26 +43,8 @@ registerRoom({
       look:'חושך מצרים! אני צריך פנס.',
       use:'חושך מצרים! אני צריך פנס.',
       items:{
-        flashlight: async()=>{
-          if(!G.f.flash_ok){
-            G.sfx('no');
-            await G.say('noam','קליק. קליק-קליק. קליק?? הפנס לא נדלק... צריך סוללות.');
-            await G.say('noam','פנס בלי סוללות זה בעצם סתם שפופרת עם חלומות.');
-          } else {
-            G.f.archive_lit=true;
-            G.sfx('ding');
-            await G.say('noam','ויהי אור!');
-            await G.say('hana','אה! אור! סוף סוף רואים משהו!');
-            await G.say('noam','אווווה!! מ... מי את?!');
-            await G.say('hana','חנה, הארכיונאית. שלושה ימים אני יושבת פה בחושך. חשבתי שסתם ירד ערב מוקדם.');
-            autosave();
-          }
-        },
-        batteries: async()=>{
-          G.sfx('no');
-          await G.say('noam','אני מנופף בסוללות באוויר... כלום. סוללות בלי פנס זה כמו עיתון בלי אותיות.');
-          await G.say('noam','אולי להכניס אותן למשהו? למשל... לפנס?');
-        },
+        flashlight: archiveLightUp,
+        batteries: archiveBatteriesInDark,
       }},
 
     {name:'עיניים זוהרות', x:208,y:66,w:26,h:18, wx:190,
@@ -48,6 +53,10 @@ registerRoom({
       use: async()=>{
         await G.say('noam','שלום...? עיניים...?');
         await G.say('noam','העיניים לא עונות. או שהן ביישניות, או שהן מדבקות. אני מהמר על מדבקות.');
+      },
+      items:{
+        flashlight: archiveLightUp,
+        batteries: archiveBatteriesInDark,
       }},
 
     /* ---------- מצב מואר ---------- */
@@ -87,12 +96,15 @@ registerRoom({
               await G.say('hana','נסה שוב, מותק. אני מאמינה בך יותר משאני מאמינה במעלית.');
             } else {
               await G.say('hana','אלף?! אם היו אלף אותיות, כל גיליון היה יוצא פעם באלף שנה. נסה שוב.');
-              await G.say('noam','אבל ״אלף״ זו אות... אה, שכחי. חושב מחדש.');
+              await G.say('noam','אבל ״אלף״ זו אות... אה, עזבי. חושב מחדש.');
             }
           }
         } else if(!f.got3){
           await G.say('hana','נו, מה אתה עומד? קלסר עשרים ושתיים! כמו מספר האותיות!');
           await G.say('noam','רץ! כלומר — הולך בזהירות בין המדפים!');
+        } else if(G.has('article')||f.won){
+          await G.say('hana','הכתבה כבר מסודרת אצלך? אז מה אתה עושה במרתף, חביבי? לדפוס! רוץ!');
+          await G.say('hana','אני אתייק את הריצה שלך תחת ״ז׳ — זריזות״.');
         } else if(f.got1&&f.got2&&f.got3){
           await G.say('hana','כל שלושת העמודים אצלך? יופי! עכשיו ליוסי בחדר הגרפיקה, שיסדר אותם לפני שהדדליין יתייק אותך.');
           await G.say('noam','תודה חנה! אזכיר אותך בכתבה!');
@@ -132,7 +144,7 @@ registerRoom({
           await G.say('noam','אולי הגברת הנחמדה שם יודעת משהו.');
         } else if(!G.f.got3){
           await G.say('noam','קלסר 22... כמו מספר האותיות באלף-בית!');
-          await G.say('noam','*פותח* — ענן אבק! קוף... קוף... אני מאבד את... אפצ׳י!!');
+          await G.say('noam','*פותח* — ענן אבק! קוח... קוח... אני מאבד את... אפצ׳י!!');
           G.add('page3');
           G.f.got3=true;
           G.sfx('ok');

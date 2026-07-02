@@ -42,13 +42,15 @@ function currentHint(){
   if(!G.has('page2')&&!f.got2) missing.push('page2');
   if(!G.has('page3')&&!f.got3) missing.push('page3');
   if(G.has('article')) return 'הכתבה מוכנה! רוצו לבית הדפוס של שמעון — בקצה הרחוב, משמאל!';
-  if(f.got1&&f.got2&&f.got3) return 'יש לך את כל שלושת העמודים! קחו אותם ליוסי בחדר הגרפיקה — הוא ידע לסדר אותם.';
+  if(f.got1&&f.got2&&f.got3) return 'יש לך את כל שלושת העמודים! קחו אותם ליוסי בחדר הגרפיקה — הוא כבר יידע לסדר אותם.';
   if(missing.includes('page1')){
+    if(f.cat_fed) return 'מרדכי כבר קיבל את הטונה שלו והלך! העמוד מחכה מתחת לארון בחדר הכתבים.';
     if(!f.knows_tuna) return 'החתול מרדכי שומר על משהו בחדר הכתבים... אולי דובי הכתב יודע מה מרדכי אוהב?';
     if(!G.has('tuna')) return 'דובי אמר שמרדכי מוכן להזיז את עצמו רק בשביל טונה. איפה יש אוכל בבניין? במטבחון!';
     return 'יש לך טונה! תנו אותה למרדכי החתול בחדר הכתבים.';
   }
   if(missing.includes('page2')){
+    if(f.pigeon_gone) return 'נחום עף לו! הקן פנוי — עלו לגג וקחו את העמוד מהקן.';
     if(!f.knows_pigeon) return 'משהו לבן מבצבץ מהקן של היונה על הגג. עולים למעלה דרך הסולם במטבחון!';
     if(!G.has('seeds')&&!f.coin) return 'נחום היונה רוצה משהו טעים בתמורה לדף. אולי בקיוסק יש גרעינים? רגע... צריך מטבע. שווה לחפש מתחת לכריות של הספה בלובי!';
     if(!G.has('seeds')) return 'יש לך מטבע! בקיוסק של בני ברחוב מוכרים גרעינים.';
@@ -56,10 +58,10 @@ function currentHint(){
   }
   if(missing.includes('page3')){
     if(!G.has('flashlight')) return 'בארכיון במרתף חשוך לגמרי. לשמעון בבית הדפוס יש פנס — שווה לבקש ממנו!';
-    if(!f.flash_ok) return 'הפנס בלי סוללות! רמז: בחדר הישיבות יש שלט של מקרן... עם סוללות בפנים.';
+    if(!f.flash_ok) return 'הפנס בלי סוללות! בחדר הישיבות יש שלט של מקרן... ומה יש בתוך שלט? בדיוק.';
     if(!f.archive_lit) return 'יש לך פנס עובד! השתמשו בו בתוך הארכיון החשוך.';
     if(!f.hana_quiz) return 'חנה מהארכיון יודעת בדיוק איפה הדף — אבל היא אוהבת חידות. דברו איתה!';
-    return 'חנה אמרה: הקלסר עם המספר כמו מספר האותיות באלף-בית! ספרו טוב ולחצו על הקלסר הנכון.';
+    return 'חנה אמרה: הקלסר שהמספר שלו הוא כמספר האותיות באלף-בית! ספרו טוב ולחצו על הקלסר הנכון.';
   }
   return 'שווה להסתובב, לדבר עם כולם וללחוץ על כל דבר שזז (וגם על מה שלא).';
 }
@@ -93,7 +95,7 @@ function openSlots(mode){
     if(slot==='auto'&&mode==='save') continue;
     const info=slotInfo(slot);
     const b=document.createElement('button');
-    b.textContent=(slot==='auto'?'שמירה אוטומטית':'משבצת '+slot)+(info?' — '+info:' — ריק');
+    b.textContent=(slot==='auto'?'שמירה אוטומטית':'משבצת '+slot)+(info?' — '+info:' — ריקה');
     if(mode==='load'&&!info) b.disabled=true;
     b.onclick=()=>{
       if(mode==='save'){ saveState(slot); toast('המשחק נשמר! 💾'); }

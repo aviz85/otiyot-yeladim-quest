@@ -16,7 +16,7 @@ registerRoom({
   npcs:()=>G.f.pigeon_gone ? [] : [{s:'pigeon', x:228, y:96, flip:false}],
 
   enter: async(from)=>{
-    if(!roofIntro && !G.f.got2){
+    if(!roofIntro && !G.f.got2 && !G.f.pigeon_gone){
       roofIntro=true;
       await G.say('noam','וואו! רואים מפה את כל השכונה! ואת הכביסה של כל השכונה!');
       await G.say('pigeon','קורר-קו.');
@@ -40,7 +40,7 @@ registerRoom({
         if(c===0){
           await G.say('pigeon','קוררר?! קו-קו-קו!!');
           await G.say('noam','(תרגום: ״שלכם? נחת אצלי, ריפד לי את הקן — עכשיו הוא רהיט.״)');
-          await G.say('noam','יונה עם דיני קניין. רק זה חסר לי היום.');
+          await G.say('noam','יונה עם עורך דין. רק זה חסר לי היום.');
         } else if(c===1){
           await G.say('pigeon','קו-קו! קוררר קו!');
           await G.say('noam','(תרגום: ״לבד! שלוש שנים אספתי זרדים. הדף הלבן — זה הטאץ׳ האחרון.״)');
@@ -59,14 +59,10 @@ registerRoom({
         cookie: async()=>{
           await G.say('noam','נחום, רוצה עוגייה?');
           await G.say('pigeon','קו... קו?! קוררר-קו!!');
-          await G.say('noam','(תרגום: ״עוגייה?! יונים לא אוכלות עוגיות. זה מזון של סבתות וילדים.״)');
+          await G.say('noam','(תרגום: ״עוגייה?! אני יונה רצינית, לא אורח בקידוש.״)');
           await G.say('noam','נעלב. יונה נעלבת. עכשיו ראיתי הכול.');
         },
-        tuna: async()=>{
-          await G.say('noam','טונה? יונים אוכלות טונה?');
-          await G.say('pigeon','קו?!');
-          await G.say('noam','(תרגום: ״אני נראה לך חתול?!״) סליחה, סליחה. טעות בכתובת.');
-        },
+        tuna: async()=>{ await tunaOnNachum(); },
       }},
 
     {name:'הקן', x:216,y:96,w:28,h:12, wx:206,
@@ -79,7 +75,7 @@ registerRoom({
           await G.say('noam','אני רק אושיט יד ואקח בעדינות את ה—');
           G.sfx('coo');
           await G.say('pigeon','קוררר!!! קו-קו-קו!!');
-          await G.say('noam','נחום מסתכל עליי כמו על עוגת שבת. אני לא מתקרב לקן הזה בלי שוחד.');
+          await G.say('noam','נחום שומר על הקן כמו סבתא על עוגת השבת. אני לא מתקרב לקן הזה בלי שוחד.');
           await G.say('noam','משהו שיונים משתגעות עליו... גרעינים, למשל.');
         } else if(!G.f.got2){
           G.add('page2'); G.f.got2=true; G.sfx('pickup');
@@ -92,9 +88,10 @@ registerRoom({
       items:{
         seeds: async()=>{
           if(!G.f.pigeon_gone){ await feedNachum(); }
-          else await G.say('noam','לפזר גרעינים בקן ריק? זו הזמנה חתומה לכל יוני השכונה.');
+          else await G.say('noam','לפזר גרעינים בקן ריק? זו הזמנה רשמית לכל יוני השכונה.');
         },
         cookie: async()=>{ await G.say('noam','להשאיר עוגייה בקן? נחום כבר הבהיר לי מה דעתו על עוגיות. בקול.'); },
+        tuna: async()=>{ await tunaOnNachum(); },
       }},
 
     {name:'השובך', x:200,y:64,w:60,h:18, wx:206,
@@ -105,7 +102,7 @@ registerRoom({
       }},
 
     {name:'דוד השמש', x:100,y:80,w:50,h:40, wx:125,
-      look:'דוד שמש. מחמם מים בעזרת שמש. אף אחד לא באמת יודע איך — גם הוא לא מבין איך הוא עובד.',
+      look:'דוד שמש. מחמם מים בעזרת השמש. איך? אף אחד לא יודע. גם הדוד לא.',
       use: async()=>{
         await G.say('noam','הוא חם. השמש עובדת. הדוד עובד. שנינו לא מבינים למה, ושנינו בסדר עם זה.');
       }},
@@ -122,7 +119,7 @@ registerRoom({
       }},
 
     {name:'צלחת הלוויין', x:294,y:96,w:20,h:28, wx:278,
-      look:'צלחת לוויין ענקית. קולטת שידורים מהחלל. נחום בטוח שזו אמבטיה שלו.',
+      look:'צלחת לוויין ענקית. קולטת שידורים מהחלל. נחום בטוח שזו האמבטיה שלו.',
       use:'היא מכוונת לחלל. אין לי שום הודעה דחופה לחייזרים. עדיין.'},
 
     {name:'צינור האוורור', x:264,y:82,w:14,h:44, wx:258,
@@ -163,6 +160,17 @@ registerRoom({
       use: async()=>{ G.sfx('door'); G.go('kitchen',270); }},
   ],
 });
+
+/* טונה על נחום/הקן — אותה בדיחה משני הכיוונים */
+async function tunaOnNachum(){
+  if(!G.f.pigeon_gone){
+    await G.say('noam','טונה? יונים אוכלות טונה?');
+    await G.say('pigeon','קו?!');
+    await G.say('noam','(תרגום: ״אני נראה לך חתול?!״) סליחה, סליחה. טעות בכתובת.');
+  } else {
+    await G.say('noam','טונה בקן ריק? לא. יש גבול גם לניסויים שלי.');
+  }
+}
 
 /* נחום מקבל גרעינים — עף מהקן (page2 puzzle unlock) */
 async function feedNachum(){

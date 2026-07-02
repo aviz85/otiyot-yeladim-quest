@@ -166,6 +166,462 @@
       "related_bugs": [],
       "occurrences": 2,
       "last_seen": "2026-07-02T04:58:39.390Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-07-02T05:08:20.412Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/kitchen.js",
+      "root_cause": "Had 'הקשת חזרה ללובי. מישהו תלה עליה פתק: ״מי שלוקח קפ",
+      "fix": "Changed to 'הקשת חזרה ללובי. מישהו תלה עליה פתק: ״מי שלוקח קפ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:08:20.412Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-07-02T05:08:32.801Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/office.js",
+      "root_cause": "Had 'והכתבה הראשית — הריאיון הבלעדי עם סופרת הילדים המ",
+      "fix": "Changed to 'והכתבה הראשית נעלמה!! הריאיון הבלעדי עם סופרת היל",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-07-02T05:08:42.048Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-07-02T05:08:33.633Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/archive.js",
+      "root_cause": "Had '*פותח* — ענן אבק! קוף... קוף... אני מאבד את... אפ",
+      "fix": "Changed to '*פותח* — ענן אבק! קוח... קוח... אני מאבד את... אפ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-02T05:08:35.949Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-07-02T05:08:45.886Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/lobby.js",
+      "root_cause": "Had 'עוגייה?! בשבילי?! נעם, אתה מתוק... אבל תשאיר אותה",
+      "fix": "Changed to 'עוגייה?! בשבילי?! נעם, אתה מתוק... אבל תשאיר אותה",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-07-02T05:08:56.217Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-07-02T05:08:46.087Z",
+      "error_message": "Wrong condition in logic",
+      "file": "js/rooms/archive.js",
+      "root_cause": "Condition was: if (f.got1&&f.got2&&f.got3)",
+      "fix": "Changed to: if (G.has('article')",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:08:46.087Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-07-02T05:08:47.011Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/newsroom.js",
+      "root_cause": "Had 'איזו רוח! מכאן בטח עף החוצה לפחות עמוד אחד...'",
+      "fix": "Changed to 'מהחלון הזה עף עמוד 2 עד לקן של נחום. סוף טוב — הע",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-07-02T05:08:52.486Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-07-02T05:08:53.829Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/roof.js",
+      "root_cause": "Had 'דוד שמש. מחמם מים בעזרת שמש. אף אחד לא באמת יודע ",
+      "fix": "Changed to 'דוד שמש. מחמם מים בעזרת השמש. איך? אף אחד לא יודע",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-02T05:08:54.968Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-07-02T05:08:56.401Z",
+      "error_message": "Wrong condition in logic",
+      "file": "js/rooms/roof.js",
+      "root_cause": "Condition was: if (!roofIntro && !G.f.got2)",
+      "fix": "Changed to: if (!roofIntro && !G.f.got2 && !G.f.pigeon_gone)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:08:56.401Z"
+    },
+    {
+      "id": "bug-019",
+      "timestamp": "2026-07-02T05:08:56.843Z",
+      "error_message": "Wrong condition in logic",
+      "file": "js/rooms/lobby.js",
+      "root_cause": "Condition was: if (G.has('article')",
+      "fix": "Changed to: if (G.f.won)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:08:56.843Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-07-02T05:09:00.819Z",
+      "error_message": "Missing await",
+      "file": "js/rooms/office.js",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:00.819Z"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-07-02T05:09:05.849Z",
+      "error_message": "Null/undefined access in ",
+      "file": "js/rooms/archive.js",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:05.849Z"
+    },
+    {
+      "id": "bug-022",
+      "timestamp": "2026-07-02T05:09:06.895Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/street.js",
+      "root_cause": "Had 'לחצתי עליו ידידותית. הוא נשאר כבוי. מקצוען — שומר",
+      "fix": "Changed to 'טפחתי עליו טפיחה ידידותית. הוא נשאר כבוי. מקצוען ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-07-02T05:09:34.053Z"
+    },
+    {
+      "id": "bug-023",
+      "timestamp": "2026-07-02T05:09:14.703Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/design.js",
+      "root_cause": "Had 'יוסי! מצאתי את כל שלושת העמודים! אחד מתחת לחתול, ",
+      "fix": "Changed to 'יוסי! מצאתי את כל שלושת העמודים! אחד מתחת לחתול, ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-07-02T05:09:48.145Z"
+    },
+    {
+      "id": "bug-024",
+      "timestamp": "2026-07-02T05:09:14.777Z",
+      "error_message": "Missing await",
+      "file": "js/rooms/roof.js",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:14.778Z"
+    },
+    {
+      "id": "bug-025",
+      "timestamp": "2026-07-02T05:09:18.108Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/rooms/archive.js",
+      "root_cause": "20 lines replaced/restructured",
+      "fix": "Rewrote 22→4 lines (20 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:18.108Z"
+    },
+    {
+      "id": "bug-026",
+      "timestamp": "2026-07-02T05:09:20.351Z",
+      "error_message": "Missing await",
+      "file": "js/rooms/lobby.js",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:20.351Z"
+    },
+    {
+      "id": "bug-027",
+      "timestamp": "2026-07-02T05:09:24.661Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/rooms/design.js",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 4→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:24.661Z"
+    },
+    {
+      "id": "bug-028",
+      "timestamp": "2026-07-02",
+      "error_message": "Rivka's 0-pages hint contained 'והעמדתי מודיעה' — not a Hebrew word, garbled clue pointing player to archive",
+      "file": "js/rooms/office.js",
+      "root_cause": "Typo/garbled subject in dialogue line; intended character is Hana the archivist",
+      "fix": "Replaced with 'וחנה מהארכיון הודיעה שהיא לקחה ערימת ניירות למרתף!'; also added items handler on Rivka hotspot so pages/article used on her give story-consistent responses instead of generic randomNo",
+      "tags": [
+        "hebrew",
+        "dialogue",
+        "typo",
+        "office",
+        "hint"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02"
+    },
+    {
+      "id": "bug-029",
+      "timestamp": "2026-07-02T05:09:32.652Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/meeting.js",
+      "root_cause": "Had 'שמונה כיסאות. אחד מהם מסתובב. על זה המסתובב יש הכ",
+      "fix": "Changed to 'שמונה כיסאות. אחד מהם מסתובב. על המסתובב יש הכי ה",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-07-02T05:09:47.914Z"
+    },
+    {
+      "id": "bug-030",
+      "timestamp": "2026-07-02T05:09:38.745Z",
+      "error_message": "Significant refactor of ",
+      "file": "js/rooms/lobby.js",
+      "root_cause": "14 lines replaced/restructured",
+      "fix": "Rewrote 21→3 lines (14 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:38.745Z"
+    },
+    {
+      "id": "bug-031",
+      "timestamp": "2026-07-02T08:09:43",
+      "error_message": "Roof intro replays with invisible pigeon after reload (roofIntro session var vs autosaved pigeon_gone flag)",
+      "file": "js/rooms/roof.js",
+      "root_cause": "enter guard checked only !roofIntro && !G.f.got2; after feeding Nachum + reload, pigeon_gone restores true but roofIntro resets false, so intro plays while npcs() returns []",
+      "fix": "guard now also requires !G.f.pigeon_gone",
+      "tags": [
+        "roof",
+        "autosave",
+        "flags",
+        "intro"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T08:09:43"
+    },
+    {
+      "id": "bug-032",
+      "timestamp": "2026-07-02T08:09:43",
+      "error_message": "Using tuna on nest hotspot fell through to generic 'זה לא עובד' though pigeon hotspot 1px above has a custom gag",
+      "file": "js/rooms/roof.js",
+      "root_cause": "tuna handler existed only on pigeon hotspot; pigeon/nest rects overlap by 1px and pigeon sits visually on the nest",
+      "fix": "extracted shared tunaOnNachum() and wired it into both pigeon and nest items (nest adds an empty-nest branch)",
+      "tags": [
+        "roof",
+        "hotspot",
+        "items",
+        "tuna"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T08:09:43"
+    },
+    {
+      "id": "bug-033",
+      "timestamp": "2026-07-02T05:09:47.876Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/rooms/print.js",
+      "root_cause": "Had 'מה?? מצאת סוללות?? עוד לא?? תחפש בשלטים!! סוללות ",
+      "fix": "Changed to 'מה?? מצאת סוללות?? עוד לא?? תחפש בשלטים!! סוללות ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-02T05:09:49.986Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-07-02T05:09:53.504Z",
+      "error_message": "Function not marked async",
+      "file": "js/rooms/design.js",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T05:09:53.504Z"
+    },
+    {
+      "id": "bug-035",
+      "timestamp": "2026-07-02T05:10:08.881Z",
+      "error_message": "Incorrect value in code",
+      "file": "js/game.js",
+      "root_cause": "Had ' — ריק'",
+      "fix": "Changed to ' — ריקה'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-07-02T05:10:17.851Z"
+    },
+    {
+      "id": "bug-036",
+      "timestamp": "2026-07-02T00:00:00Z",
+      "error_message": "Clicking Gila in the lobby triggered the reception desk instead of her dialogue; items on her hit the desk (generic refusal)",
+      "file": "js/rooms/lobby.js",
+      "root_cause": "Gila's hotspot (x152-180,y112-156) was listed BEFORE the overlapping reception desk hotspot (x136-196,y104-146); engine hotspotsAt() iterates in reverse so later array entries win on overlap — desk shadowed most of her sprite",
+      "fix": "Reordered lobby hotspots array so 'גילה מהקבלה' comes AFTER 'דלפק הקבלה' (and sofa); added comment in file explaining the reverse-iteration priority rule. Also added G.f.won guard to her use handler so post-win dialogue doesn't direct player to reassemble consumed pages",
+      "tags": [
+        "hotspot-overlap",
+        "z-order",
+        "lobby",
+        "engine-priority",
+        "post-win-state"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T00:00:00Z"
+    },
+    {
+      "id": "bug-037",
+      "timestamp": "2026-07-02T05:10:19.960Z",
+      "error_message": "Missing guard clause",
+      "file": "js/game.js",
+      "root_cause": "No early return/throw for edge case: missing.includes('page2'",
+      "fix": "Added guard clause: if (missing.includes('page2')",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-02T05:10:21.959Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-07-02T00:00:00Z",
+      "error_message": "design.js: Yossi first-meeting intro (name question + Comic Sans quiz) replayed on every talk with 0 pages; light-table hotspot overlapped Yossi's head (x106-134 y112-120) so clicks/items there hit the table due to engine reverse-iteration priority; table had no page/article item handlers",
+      "file": "js/rooms/design.js",
+      "root_cause": "intro branch had no met-state guard; light-table rect (y50 h70) extended into Yossi's rect and later array index wins overlaps in hotspotsAt(); missing items:{} on the assembly-target hotspot",
+      "fix": "module-level closure `let metYossi` gating the intro (not a G.f flag, whitelist intact); shrank table h:70→62; added items page1/page2/page3→pageOnTable redirect + article handler on the table",
+      "tags": [
+        "design",
+        "state-inconsistent-dialogue",
+        "hotspot-overlap",
+        "engine-priority",
+        "missing-item-handler"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-02T00:00:00Z"
     }
   ]
 }
