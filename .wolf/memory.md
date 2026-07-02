@@ -144,3 +144,5 @@
 | 2026-07-02 | Applied 11 reviewer fixes to design room: Hebrew fixes (calque "זה איך ש", "שני שלישים", "נשאר לי חור", נחום היונה, "מלא ומאושר" instead of ambiguous שבע, "רגע היסטורי" instead of קודש, "כמעט ריקות" cups, "המקום של החור"), metYossi closure gating intro replay, light-table h:70→62 (Yossi head overlap), added page/article item handlers on light-table | js/rooms/design.js | node --check + smoke PASS | ~1400 |
 | 08:10 | Applied 6 reviewer fixes to hints/UI Hebrew (ריקה, יידע, hint rewrites, cat_fed/pigeon_gone hint states) | js/game.js | node --check + smoke PASS | ~200 |
 | 08:10 | Title tagline fix: למשפחה ← לכל המשפחה (reviewer finding) | index.html:37 | smoke test PASS | ~50 |
+| 08:30 | Game complete: 10 rooms, 11 sprites, 12 tracks, full playthrough smoke test, polish wave (65 fixes) | all | shipped | ~8.5M |
+| 08:32 | Deployed: GitHub public aviz85/otiyot-yeladim-quest + Vercel prod otiyot-yeladim-quest.vercel.app | - | live 200 | - |
