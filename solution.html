@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>פתרון מלא — אותיות וילדים: תעלומת הכתבה שנעלמה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&family=Suez+One&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14101d; --panel:#241d33; --panel2:#2d2542; --line:#3d3a4a;
+    --gold:#f7d046; --purple:#b18fd0; --green:#8fce4e; --sky:#8ecae6; --pink:#f2879c; --red:#d43d3d;
+    --ink:#f8f4e8;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Rubik',sans-serif; line-height:1.65;
+    padding:24px 16px 80px; direction:rtl;
+  }
+  .wrap{ max-width:820px; margin:0 auto; }
+  header{
+    text-align:center; padding:28px 18px; margin-bottom:24px;
+    background:var(--panel); border:4px solid var(--purple); border-radius:16px;
+  }
+  .logo{ font-family:'Suez One'; font-size:clamp(28px,7vw,46px); color:var(--gold);
+    text-shadow:2px 2px 0 #932828, 4px 4px 0 #1a1423; line-height:1.1; }
+  .sub{ font-family:'Suez One'; font-size:clamp(15px,4vw,22px); color:var(--sky); margin-top:6px; }
+  .spoiler-tag{ display:inline-block; margin-top:14px; background:var(--red); color:#fff;
+    font-weight:800; padding:6px 16px; border-radius:20px; font-size:14px; }
+  .secret{ margin-top:12px; font-size:13px; color:var(--purple); opacity:.85; }
+
+  h2{ font-family:'Suez One'; color:var(--gold); font-size:clamp(20px,5vw,28px);
+    margin:34px 0 14px; padding-bottom:8px; border-bottom:3px solid var(--line); }
+  h3{ color:var(--green); font-size:19px; margin:22px 0 8px; }
+  p{ margin:8px 0; }
+  a{ color:var(--sky); }
+
+  .tldr{ background:var(--panel2); border:2px solid var(--gold); border-radius:12px;
+    padding:16px 20px; margin:18px 0; font-size:15px; }
+  .tldr code{ background:#1a1423; color:var(--gold); padding:1px 7px; border-radius:5px;
+    font-family:'Rubik'; font-weight:600; font-size:14px; display:inline-block; margin:2px 0; }
+
+  ol.steps{ list-style:none; counter-reset:step; padding:0; }
+  ol.steps > li{ counter-increment:step; position:relative;
+    background:var(--panel); border:2px solid var(--line); border-radius:12px;
+    padding:16px 18px 16px 18px; margin:12px 0; padding-inline-start:56px; }
+  ol.steps > li::before{ content:counter(step); position:absolute; inset-inline-start:14px; top:14px;
+    width:30px; height:30px; background:var(--purple); color:#1a1423; font-weight:800;
+    border-radius:50%; display:grid; place-items:center; font-size:15px; }
+  li b{ color:var(--sky); }
+  .loc{ display:inline-block; background:#1a1423; color:var(--pink); font-size:12px; font-weight:600;
+    padding:2px 9px; border-radius:6px; margin-inline-end:6px; }
+  .item{ background:#3a2f14; color:var(--gold); font-weight:600; padding:1px 7px; border-radius:5px; font-size:14px; }
+  .arrow{ color:var(--gold); font-weight:800; }
+
+  .map{ background:var(--panel); border:2px solid var(--line); border-radius:12px; padding:16px 20px;
+    font-size:14px; line-height:2; }
+  .map .room{ color:var(--gold); font-weight:600; }
+
+  details.hint{ background:var(--panel2); border:2px solid var(--line); border-radius:10px;
+    padding:10px 16px; margin:10px 0; }
+  details.hint summary{ cursor:pointer; color:var(--green); font-weight:600; }
+  details.hint[open]{ border-color:var(--green); }
+
+  .note{ background:#1a2a1a; border-inline-start:4px solid var(--green); border-radius:8px;
+    padding:12px 16px; margin:14px 0; font-size:14px; }
+  .easter{ background:#2a1a2a; border-inline-start:4px solid var(--pink); border-radius:8px;
+    padding:12px 16px; margin:14px 0; font-size:14px; }
+  footer{ text-align:center; margin-top:40px; padding-top:20px; border-top:2px solid var(--line);
+    font-size:13px; color:var(--purple); }
+  kbd{ background:#1a1423; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px;
+    padding:1px 7px; font-family:'Rubik'; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">אותיות וילדים</div>
+  <div class="sub">תעלומת הכתבה שנעלמה — פתרון מלא 🗝️</div>
+  <div class="spoiler-tag">⚠️ ספוילר מלא — כל התעלומה נחשפת כאן</div>
+  <div class="secret">דף סודי. אין אליו קישור מהמשחק. שמור את הכתובת רק לעצמך 🤫</div>
+</header>
+
+<h2>🎯 המטרה</h2>
+<p>הגיליון החגיגי של ״אותיות וילדים״ יורד לדפוס ב-<b>18:00</b>. הכתבה הראשית — ריאיון עם הסופרת המסתורית ש. גיבורי — התפזרה ל-<b>שלושה עמודים</b> שנעלמו. צריך לאסוף את שלושתם, להרכיב את הכתבה, ולהדפיס את הגיליון בזמן.</p>
+
+<div class="tldr">
+<b>הפתרון ב-4 שורות:</b><br>
+<code>עמוד א</code> = טונה ← חתול · <code>עמוד ב</code> = מטבע ← גרעינים ← יונה · <code>עמוד ג</code> = פנס+סוללות ← חידת ה-22<br>
+ואז: יוסי מרכיב (א,ב,ג) <span class="arrow">←</span> שמעון מדפיס (ירוק,צהוב,אדום) <span class="arrow">←</span> ניצחון 🎉
+</div>
+
+<h2>🗺️ מפת הבניין</h2>
+<div class="map">
+<span class="room">רחוב</span> ⇄ <span class="room">לובי</span> (המרכז) ⇄ <span class="room">חדר העורכת</span>, <span class="room">חדר כתבים</span>, <span class="room">מטבחון</span>, <span class="room">ארכיון</span> (מדרגות למרתף)<br>
+<span class="room">חדר כתבים</span> ⇄ <span class="room">חדר גרפיקה</span>, <span class="room">חדר ישיבות</span><br>
+<span class="room">מטבחון</span> ⇄ <span class="room">גג</span> (סולם) &nbsp;·&nbsp; <span class="room">רחוב</span> ⇄ <span class="room">בית הדפוס</span>
+</div>
+
+<h2>📖 פתרון שלב-אחר-שלב</h2>
+
+<h3>פתיחה</h3>
+<ol class="steps">
+<li><span class="loc">חדר העורכת</span> דברו עם <b>רבקה</b> — היא מסבירה את המשימה. לחצו על <b>החלון הפתוח</b> כדי לגלות שדף עף לכיוון הגג.</li>
+</ol>
+
+<h3>🐱 עמוד א — החתול מרדכי</h3>
+<ol class="steps">
+<li><span class="loc">חדר כתבים</span> דברו עם <b>דובי הכתב</b> (שמדבר בכותרות). מגלים שמרדכי החתול זז רק בשביל <span class="item">טונה</span>.</li>
+<li><span class="loc">מטבחון</span> פתחו את <b>המקרר</b> וקחו את <span class="item">קופסת הטונה</span>.</li>
+<li><span class="loc">חדר כתבים</span> בחרו את הטונה במלאי ולחצו על <b>מרדכי החתול</b>. הוא זולל והולך.</li>
+<li><span class="loc">חדר כתבים</span> לחצו על <b>ערימת הניירות / פינת העמוד</b> מתחת לארון וקחו את <span class="item">עמוד א</span>. ✅</li>
+</ol>
+
+<h3>🕊️ עמוד ב — היונה נחום</h3>
+<ol class="steps">
+<li><span class="loc">לובי</span> לחצו על <b>הספה הכתומה</b> — מתחת לכריות מסתתר <span class="item">מטבע</span>.</li>
+<li><span class="loc">רחוב</span> בקיוסק של <b>בני</b>: בחרו את המטבע ולחצו על הקיוסק/בני כדי לקנות <span class="item">שקית גרעינים</span>.</li>
+<li><span class="loc">מטבחון</span> עלו בסולם <b>לגג</b>.</li>
+<li><span class="loc">גג</span> בחרו את הגרעינים ולחצו על <b>נחום היונה</b> — הוא חוטף אותם ועף.</li>
+<li><span class="loc">גג</span> לחצו על <b>הקן</b> וקחו את <span class="item">עמוד ב</span>. ✅</li>
+</ol>
+
+<h3>🔦 עמוד ג — הארכיון החשוך</h3>
+<ol class="steps">
+<li><span class="loc">בית הדפוס</span> דברו עם <b>שמעון המדפיס</b> — הוא משאיל לכם <span class="item">פנס</span>… בלי סוללות.</li>
+<li><span class="loc">חדר ישיבות</span> לחצו על <b>השלט של המקרן</b> שעל השולחן וקחו את <span class="item">הסוללות</span>.</li>
+<li><b>מחברים פנס+סוללות:</b> במלאי לחצו על <span class="item">הסוללות</span> ואז על <span class="item">הפנס</span> — קליק, יש אור! <br><span style="font-size:13px;opacity:.8">(לחלופין: תנו את הסוללות לשמעון בבית הדפוס והוא ירכיב.)</span></li>
+<li><span class="loc">ארכיון</span> (מדרגות מהלובי) במצב חושך — בחרו את <b>הפנס הדולק</b> ולחצו על החשכה. האור נדלק ו<b>חנה</b> מופיעה.</li>
+<li><span class="loc">ארכיון</span> דברו עם <b>חנה</b>. היא נותנת חידה: <i>״כמה אותיות יש באלף-בית העברי?״</i> — התשובה: <b>22</b>.</li>
+<li><span class="loc">ארכיון</span> לחצו על <b>קלסר מספר 22</b> (הכחול) וקחו את <span class="item">עמוד ג</span>. ✅</li>
+</ol>
+
+<h3>🏆 הרכבה והדפסה</h3>
+<ol class="steps">
+<li><span class="loc">חדר גרפיקה</span> עם שלושת העמודים, דברו עם <b>יוסי הגרפיקאי</b>. במיני-פאזל סדרו אותם לפי האותיות בפינה: <b>עמוד א <span class="arrow">←</span> עמוד ב <span class="arrow">←</span> עמוד ג</b>. מקבלים את <span class="item">הכתבה המלאה</span>.</li>
+<li><span class="loc">בית הדפוס</span> דברו עם <b>שמעון</b> ומסרו את הכתבה. עכשיו הפעילו את המכונה — לחצו על הכפתורים לפי הסדר:<br>
+<b style="color:var(--green)">ירוק</b> <span class="arrow">←</span> <b style="color:var(--gold)">צהוב</b> <span class="arrow">←</span> <b style="color:var(--red)">אדום</b>.<br>
+<span style="font-size:13px;opacity:.8">(שמעון מתלבט כי ״השלט הפוך״ — אבל הסדר הנכון הוא ירוק, צהוב, אדום, כמו רמזור. סדר שגוי = המכונה מתעטשת ומתחילים מחדש.)</span></li>
+<li>המכונה שואגת, הגיליון יוצא לדפוס בזמן — <b>ניצחתם!</b> 🎉</li>
+</ol>
+
+<h2>🧭 לפי איפה נתקעתם</h2>
+<details class="hint"><summary>איך פותחים את החתול?</summary>קודם צריך לדעת שהוא אוהב טונה — זה מדובי בחדר כתבים. הטונה עצמה במקרר במטבחון.</details>
+<details class="hint"><summary>אין לי מטבע לגרעינים</summary>המטבע מתחת לכריות הספה הכתומה בלובי. לחצו עליה.</details>
+<details class="hint"><summary>הפנס לא נדלק</summary>צריך סוללות — הן בתוך השלט של המקרן בחדר הישיבות. אחר כך מחברים סוללות←פנס במלאי, או דרך שמעון.</details>
+<details class="hint"><summary>איזה קלסר בארכיון?</summary>מספר 22 (מספר האותיות באלף-בית העברי). קודם צריך לענות נכון לחנה.</details>
+<details class="hint"><summary>המכונה לא מדפיסה</summary>קודם צריך את הכתבה המורכבת מיוסי. הסדר: ירוק, צהוב, אדום.</details>
+
+<div class="note">
+💡 <b>טיפ כללי:</b> כפתור הנורה 💡 במשחק תמיד נותן רמז מותאם למצב הנוכחי. שמירה/טעינה 💾📂 נשמרות בדפדפן, יש גם שמירה אוטומטית בכל מעבר חדר.
+</div>
+
+<h2>🥚 סודות ובונוסים</h2>
+<div class="easter">
+🍪 <b>עוגייה:</b> יש עוגייה במטבחון (בצנצנת). היא לא נחוצה לפתרון — אבל נסו להשתמש בה על דמויות שונות (למשל להציע אותה ליונה, לחתול, או לחבר אותה עם הטונה במלאי) לתגובות מצחיקות.<br><br>
+🛗 <b>המעלית השבורה</b> בלובי: לחיצות חוזרות נותנות בדיחות מתגלגלות.<br><br>
+👁️ <b>חוק לוקאס-ארטס:</b> לכל אובייקט במשחק יש שורת ״הסתכלות״ מצחיקה משלו (קליק ימני או כפתור 👁️). שווה להסתכל על הכל — במיוחד השעון, הפוסטרים, וחביות הדיו.
+</div>
+
+<footer>
+דף פתרון סודי · אותיות וילדים: תעלומת הכתבה שנעלמה<br>
+משחק בדיוני שנוצר כולו בבינה מלאכותית 🤖 · <a href="/">חזרה למשחק ←</a>
+</footer>
+
+</div>
+</body>
+</html>
